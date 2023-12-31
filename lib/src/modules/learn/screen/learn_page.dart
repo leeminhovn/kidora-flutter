@@ -51,55 +51,6 @@ class _LearnPage extends State<LearnPage> {
     return SafeArea(
       child: Scaffold(
         appBar: const AppBarCustom(),
-        floatingActionButton: Stack(
-          children: [
-            Positioned(
-              bottom: 80.0,
-              right: 16.0,
-              child: FloatingActionButton(
-                heroTag: "btn0",
-                onPressed: () {
-                  // Add your action here
-                
-                  print('Button 1 pressed');
-                },
-                child: Icon(Icons.edit),
-              ),
-            ),
-            Positioned(
-              bottom: 150.0,
-              right: 16.0,
-              child: FloatingActionButton(
-                heroTag: "btn1",
-                onPressed: () {
-                  // Add your action here
-                  String refreshToken =
-                      UserLocalStorge.store.getString('refreshToken') ?? '';
-                  print('Button 2 pressed');
-                  String accessToken =
-                      UserLocalStorge.store.getString('accessToken') ?? '';
-                  printColor.red("====>");
-                  printColor.blue("refreshToken: $refreshToken");
-                  printColor.blue("accessToken: $accessToken");
-                },
-                child: const Icon(Icons.search),
-              ),
-            ),
-            Positioned(
-              bottom: 220.0,
-              right: 16.0,
-              child: FloatingActionButton(
-                heroTag: "btn2",
-                onPressed: () {
-                  UserLocalStorge.store.remove('refreshToken') ?? '';
-                  print('Button 3 pressed');
-                  UserLocalStorge.store.remove('accessToken') ?? '';
-                },
-                child: Icon(Icons.delete),
-              ),
-            ),
-          ],
-        ),
         body: Container(
           color: AppColors.color_F4F5FB,
           width: double.infinity,
